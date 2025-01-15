@@ -6,11 +6,25 @@ import { toast } from 'react-toastify';
 
 function Cart() {
   const [data, setData] = useState<ProductInterface[]>([]);
-
+  const [dataFromLocalStorage, setDataFromLocalStorage] = useState<string | null>(null);
 
 
   useEffect(() => {
+
+    const dataFromLocalStorage = localStorage.getItem('myData');
+    if (dataFromLocalStorage) {
+      setDataFromLocalStorage(dataFromLocalStorage);
+    } else {
+      setDataFromLocalStorage(null);
+    }
     const storedData = localStorage.getItem('cart');
+    if (typeof window !== 'undefined') {
+      const storedData = localStorage.getItem('myData');
+      setDataFromLocalStorage(storedData);
+    }
+
+
+
     if (storedData) {
       try {
         const parsedData: ProductInterface[] = JSON.parse(storedData);
@@ -24,7 +38,6 @@ function Cart() {
 
   const handleRemoveItem = (itemId: number) => {
     setData(prevData => prevData.filter(item => item.id !== itemId));
-
 
     localStorage.setItem(
       'cart',
@@ -45,27 +58,27 @@ function Cart() {
 
   return (
     <div className='container'>
-      
-     <div className='container_cart'>
-     <div className='cart_title'>В корзине :{data.length} товаров</div>
-      <div>
-        {data.length === 0 ? (
-          <Images />
-        ) : (
-          <div className="container">
-          {data.map((item, index) => (
-            <div key={index} className="card">
-              <Image width={200} height={100} src={item.thumbnail} alt="rasm" />
-              <p className='title_card'>Title:{item.title}</p>
-              <p className='title-description'> Description: {item.description}
-              </p>
-              <button onClick={() => handleRemoveItem(item.id)}>Удалить</button>
+
+      <div className='container_cart'>
+        <div className='cart_title'>В корзине :{data.length} товаров</div>
+        <div>
+          {data.length === 0 ? (
+            <Images />
+          ) : (
+            <div className="container">
+              {data.map((item, index) => (
+                <div key={index} className="card">
+                  <Image width={200} height={100} src={item.thumbnail} alt="rasm" />
+                  <p className='title_card'>Title:{item.title}</p>
+                  <p className='title-description'> Description: {item.description}
+                  </p>
+                  <button onClick={() => handleRemoveItem(item.id)}>Удалить</button>
+                </div>
+              ))}
             </div>
-          ))}
+          )}
         </div>
-        )}
       </div>
-     </div>
 
     </div>
 
