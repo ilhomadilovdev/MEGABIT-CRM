@@ -1,10 +1,12 @@
 
 import Offcanvas from '@/helpers/ProductModal';
 import React, { useEffect, useState } from 'react'
-import { AiOutlineDelete } from "react-icons/ai";
+import { AiOutlineDelete, AiOutlineLoading3Quarters } from "react-icons/ai";
 import { toast } from 'react-toastify';
-import HandleModal from './HandleModal';
 import { CiEdit } from 'react-icons/ci';
+
+
+
 
 
 function CategoryProduct() {
@@ -17,13 +19,9 @@ function CategoryProduct() {
     }
   }
 
-  interface Data {
-    id: number;
-    name: string
-  }
+
 
   const [isOpen, setIsOpen] = useState(false);
-  const [isOpenProduct, setIsOpenProduct] = useState(false);
   const [product, setProduct] = useState<Product[]>([])
 
   const [loading, setLoading] = useState(false)
@@ -51,7 +49,8 @@ function CategoryProduct() {
       setProduct(product);
       console.log(product);
 
-    } catch (error) {
+    } catch (error: any) {
+      setError(error)
       console.error('Error fetching product:', error);
     } finally {
       setLoading(false)
@@ -139,11 +138,13 @@ function CategoryProduct() {
       setLoadingDelete(false)
     }
   }
-  
+
 
   useEffect(() => {
     fetchData();
   }, [count]);
+
+
 
 
 
@@ -168,6 +169,9 @@ function CategoryProduct() {
           isOpen={isOpen}
           onClose={() => setIsOpen(false)} />
       </div>
+
+      {loadProduct ? <AiOutlineLoading3Quarters /> : ''}
+      {loadingDelete?<AiOutlineLoading3Quarters /> : ''}
       <div>
         {loading ? (
           <h1>Yuklanmoqda</h1>
@@ -190,7 +194,7 @@ function CategoryProduct() {
                     <p className='p'>{item?.category.name}</p>
                     <div className='icons'>
                       <div  >
-                        <button onClick={() => setIsOpenProduct(true)} > <CiEdit />
+                        <button  > <CiEdit />
                         </button>
                       </div>
                       <button onClick={() => deleteProduct(item.id)} > <AiOutlineDelete /></button>
@@ -202,7 +206,7 @@ function CategoryProduct() {
           </table>
         )}
 
-     
+
       </div>
     </div>
   )

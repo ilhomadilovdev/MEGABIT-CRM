@@ -1,8 +1,11 @@
 
 import { ProductInterface } from '@/types/Product';
+
 import React, { useEffect, useState } from 'react'
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { FaCartArrowDown } from "react-icons/fa";
 import { toast } from 'react-toastify';
+
 
 function Product() {
 
@@ -83,7 +86,7 @@ function Product() {
 
   return (
     <div className='cart_product'>
-
+      {error ? <AiOutlineLoading3Quarters /> : ''}
       <div className='cart_icon'>
         <span>Корзинка</span>
         <div className='icons_cart'> <FaCartArrowDown /> {cart.length}</div>

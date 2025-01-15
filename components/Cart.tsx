@@ -1,5 +1,4 @@
 import Images from '@/helpers/Image';
-import Image from '@/helpers/Image';
 import { ProductInterface } from '@/types/Product';
 import React, { useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
@@ -45,6 +44,7 @@ function Cart() {
 
   return (
     <div className='container'>
+      
      <div className='container_cart'>
      <div className='cart_title'>В корзине :{data.length} товаров</div>
       <div>

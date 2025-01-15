@@ -1,11 +1,11 @@
 
 
-
 import Offcanvas from '@/helpers/Modal';
-import React, { useEffect, useRef, useState } from 'react'
-import { AiOutlineDelete } from "react-icons/ai";
+import React, { useEffect, useState } from 'react'
+import { AiOutlineDelete, AiOutlineLoading3Quarters } from "react-icons/ai";
 import { CiEdit } from "react-icons/ci";
 import { toast } from 'react-toastify';
+
 
 
 function Mainpage() {
@@ -135,6 +135,9 @@ function Mainpage() {
 
   return (
     <div className='parent'>
+
+      {isLoading ? <AiOutlineLoading3Quarters /> : ''}
+
       <div className='btn_div'>
         <button onClick={() => setIsOpen(true)}>Создать категорию + </button>
         <Offcanvas name={name} setName={setName} createNewCategory={createNewCategory} isOpen={isOpen} onClose={() => setIsOpen(false)} />
