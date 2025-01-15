@@ -1,5 +1,6 @@
 import Images from '@/helpers/Image';
 import { ProductInterface } from '@/types/Product';
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
 
@@ -54,7 +55,7 @@ function Cart() {
           <div className="container">
           {data.map((item, index) => (
             <div key={index} className="card">
-              <img src={item.thumbnail} alt="rasm" />
+              <Image width={200} height={100} src={item.thumbnail} alt="rasm" />
               <p className='title_card'>Title:{item.title}</p>
               <p className='title-description'> Description: {item.description}
               </p>

@@ -13,7 +13,7 @@ function Mainpage() {
   const [isOpen, setIsOpen] = useState(false);
   const [product, setProduct] = useState<Product[]>([])
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
+   const [error, setError] = useState<null | string>(null)
 
   const getCategory = () => {
     const fetchData = async () => {
@@ -31,8 +31,8 @@ function Mainpage() {
         setProduct(product);
         console.log('data', product);
         setLoading(false)
-      } catch (error: any) {
-        setError(error.message);
+      } catch (error) {
+        setError('An error occurred');
         console.log('error', error);
 
       }

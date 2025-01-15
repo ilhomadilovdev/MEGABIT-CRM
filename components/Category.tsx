@@ -26,7 +26,7 @@ function CategoryProduct() {
 
   const [loading, setLoading] = useState(false)
   const [loadingDelete, setLoadingDelete] = useState(false)
-  const [error, setError] = useState(null)
+  const [error, setError] = useState<null | string>(null)
 
   const [count, setCount] = useState(1);
 
@@ -49,8 +49,9 @@ function CategoryProduct() {
       setProduct(product);
       console.log(product);
 
-    } catch (error: any) {
-      setError(error)
+    } catch (error) {
+
+      setError('An error occurred');
       console.error('Error fetching product:', error);
     } finally {
       setLoading(false)
@@ -142,7 +143,7 @@ function CategoryProduct() {
 
   useEffect(() => {
     fetchData();
-  }, [count]);
+  }, [fetchData, count]);
 
 
 
@@ -171,7 +172,7 @@ function CategoryProduct() {
       </div>
 
       {loadProduct ? <AiOutlineLoading3Quarters /> : ''}
-      {loadingDelete?<AiOutlineLoading3Quarters /> : ''}
+      {loadingDelete ? <AiOutlineLoading3Quarters /> : ''}
       <div>
         {loading ? (
           <h1>Yuklanmoqda</h1>

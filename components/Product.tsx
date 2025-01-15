@@ -20,7 +20,7 @@ function Product() {
 
   const [product, setProduct] = useState<ProductInterface[]>([])
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
+  const [error, setError] = useState<null | string>(null)
 
 
 
@@ -32,8 +32,8 @@ function Product() {
       setProduct(product.products);
       console.log(product);
 
-    } catch (error: any) {
-      setError(error)
+    } catch (error) {
+      setError('An error occurred');
       console.error('Error fetching product:', error);
     } finally {
       setLoading(false)
