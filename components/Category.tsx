@@ -143,7 +143,7 @@ function CategoryProduct() {
 
   useEffect(() => {
     fetchData();
-  }, [fetchData, count]);
+  }, [ count]);
 
 
 
