@@ -1,0 +1,382 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  width: 100%;
+  height: 50px;
+  background-color: rgb(69, 181, 229);
+}
+
+.tab_card {
+  padding: 10px;
+  box-sizing: border-box;
+  width: 1280px;
+  margin-right: auto;
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+ul {
+  padding: 25px;
+  box-sizing: border-box;
+  border-right: 1px solid gray;
+  width: 250px;
+  height: 800px;
+  list-style: none;
+}
+
+ul li {
+  margin-top: 15px;
+  font-size: 24px;
+  font-weight: 500;
+  color: rgb(43, 38, 38);
+}
+
+.parent {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.active {
+  color: blue;
+}
+
+.tab-content {
+  width: 980px;
+
+}
+
+
+.tr {
+  box-sizing: border-box;
+  font-size: 24px;
+  background-color: rgb(197, 197, 225);
+}
+
+.tt {
+  padding: 25px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.one {
+  display: flex;
+  justify-content: space-between;
+}
+
+.index {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  padding-left: 85px;
+  box-sizing: border-box;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+.btn_div {
+  text-align: end;
+  padding-bottom: 40px;
+  box-sizing: border-box;
+}
+
+.btn_div button {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(79, 150, 221);
+}
+
+.icons {
+  cursor: pointer;
+  display: flex;
+  gap: 15px
+}
+
+.icons button:hover {
+  color: red;
+}
+
+.icons button {
+  border: none;
+  background-color: transparent;
+}
+
+.offcanvas {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 500px;
+  height: 800px;
+  background: rgb(242, 242, 245);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  transition: all 0.3s ease-in-out;
+}
+
+.offcanvas-content button {
+  position: absolute !important;
+  top: 4px;
+  left: 4px;
+  color: black;
+  background-color: rgb(242, 242, 245);
+}
+
+.modal_header {
+  position: absolute;
+  top: 5%;
+  left: 8%;
+
+}
+
+.modal_header p {
+  font-size: 28px;
+}
+
+.modal_header input {
+  width: 250px;
+  margin-right: 15px;
+  padding: 15px;
+  margin-top: 5px;
+  font-size: 15px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 5px;
+}
+
+.modal_icons {
+  width: 190px;
+  display: flex;
+  margin-top: 35px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal_icons p {
+  font-size: 16px;
+}
+
+.icons_star {
+  color: red;
+}
+
+.product button {
+  padding: 15px;
+  width: 100px;
+  margin-top: 50px;
+  border-radius: 5px;
+  background-color: rgb(38, 102, 212);
+  box-sizing: border-box;
+  color: white;
+  font-size: 16px;
+}
+
+.product button:hover {
+  cursor: pointer;
+  background-color: rgb(0, 128, 2);
+
+}
+
+.modal_header button:hover {
+  cursor: pointer;
+  background-color: rgb(0, 128, 2);
+}
+
+
+
+
+
+
+.product {
+  width: 300px;
+  position: relative;
+  top: 10%;
+  left: 35px;
+}
+
+.product .title {
+  font-weight: 600;
+  color: rgb(53, 50, 50);
+  font-size: 24px;
+}
+
+.product .icon_start {
+  width: 90px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.onee {
+  width: 80px !important;
+}
+
+.twoo {
+  width: 50px !important;
+}
+
+.end {
+  width: 85px !important;
+}
+
+select {
+  font-size: 16px;
+  width: 200px;
+  padding: 8px;
+  display: flex;
+  align-items: start;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 5px;
+  margin-top: 2px;
+}
+
+.product input {
+  display: flex;
+  font-size: 14px;
+  align-items: start;
+  width: 200px;
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.cart_product {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.cart_product p {
+  font-size: 28px;
+  font-weight: 600;
+  color: rgb(78, 71, 71);
+}
+
+.cart_product span {
+  font-size: 18px;
+  color: rgb(107, 107, 146);
+}
+
+.cart_product .cart_icon {
+  position: relative;
+  top: 10px;
+  left: 80%;
+  width: 120px;
+}
+
+.cart_product .icons_cart {
+  position: relative;
+  top: -18px;
+  left: 75px;
+}
+
+.container {
+  padding-bottom: 45px;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.card {
+  width: 222px;
+  margin: 5px;
+  margin-top: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+  width: 200px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.card .title_card {
+  font-size: 14px;
+  color: rgb(214, 115, 115);
+}
+
+.card .title-description {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 14px;
+  color: rgb(130, 122, 122);
+}
+
+.card button {
+  width: 100%;
+  padding: 10px;
+  color: white;
+  font-size: 14px;
+  border: none;
+  margin-top: 15px;
+  background-color: rgb(60, 102, 227);
+}
+
+.card button:hover {
+  background-color: rgb(60, 227, 85);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.carts {
+  border-radius: 5px;
+  opacity: 0.9;
+  background-color: rgb(212, 24, 159) !important;
+}
+
+.container_cart {
+  padding: 50px;
+  box-sizing: border-box;
+
+}
+
+.images_korzinka {
+  margin-top: 5%;
+
+}
+
+.images_korzinka p {
+  color: rgb(148, 145, 145);
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.cart_title {
+  margin-top: 5px;
+  font-size: 24px;
+  font-weight: 500;
+  color: rgb(243, 88, 88);
+}
